@@ -1,0 +1,408 @@
+[
+  {
+    "ID": 1,
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "Date": "1889-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 2,
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "Date": "1890-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 3,
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "Date": "1891-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 4,
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "Date": "1892-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 5,
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "Date": "1893-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 6,
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "Date": "1894-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 7,
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "Date": "1895-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 8,
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "Date": "1896-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 9,
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "Date": "1897-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 10,
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "Date": "1898-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 11,
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "Date": "1899-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 12,
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "Date": "1900-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 0
+    },
+    "Notes": "City Won"
+  },
+  {
+    "ID": 13,
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "Date": "1901-11-01",
+    "Score": {
+      "HomeTeamScore": 5,
+      "AwayTeamScore": 0
+    }
+  },
+  {
+    "ID": 14,
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "Date": "1903-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 10
+    },
+    "Notes": "No game was played in 1902"
+  },
+  {
+    "ID": 15,
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "Date": "1904-11-01",
+    "Score": {
+      "HomeTeamScore": 6,
+      "AwayTeamScore": 0
+    }
+  },
+  {
+    "ID": 16,
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "Date": "1905-11-01",
+    "Score": {
+      "HomeTeamScore": 4,
+      "AwayTeamScore": 6
+    }
+  },
+  {
+    "ID": 17,
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "Date": "1906-11-01",
+    "Score": {
+      "HomeTeamScore": 5,
+      "AwayTeamScore": 0
+    }
+  },
+  {
+    "ID": 18,
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "Date": "1907-11-01",
+    "Score": {
+      "HomeTeamScore": 2,
+      "AwayTeamScore": 2
+    }
+  },
+  {
+    "ID": 19,
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "Date": "1908-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 11
+    }
+  },
+  {
+    "ID": 20,
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "Date": "1909-11-01",
+    "Score": {
+      "HomeTeamScore": 11,
+      "AwayTeamScore": 0
+    }
+  },
+  {
+    "ID": 21,
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "Date": "1910-11-01",
+    "Score": {
+      "HomeTeamScore": 3,
+      "AwayTeamScore": 0
+    }
+  },
+  {
+    "ID": 22,
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "Date": "1911-11-01",
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 6
+    }
+  },
+  {
+    "ID": 23,
+    "Date": "1912-11-01",
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "Score": {
+      "HomeTeamScore": 13,
+      "AwayTeamScore": 6
+    }
+  },
+  {
+    "ID": 24,
+    "Date": "1913-11-01",
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "Score": {
+      "HomeTeamScore": 20,
+      "AwayTeamScore": 10
+    }
+  },
+  {
+    "ID": 25,
+    "Date": "1914-11-01",
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 3
+    }
+  },
+  {
+    "ID": 26,
+    "Date": "1915-11-01",
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "Score": {
+      "HomeTeamScore": 13,
+      "AwayTeamScore": 0
+    }
+  },
+  {
+    "ID": 27,
+    "Date": "1916-11-01",
+    "HomeTeam": {
+      "Name": "City"
+    },
+    "AwayTeam": {
+      "Name": "Poly"
+    },
+    "Score": {
+      "HomeTeamScore": 0,
+      "AwayTeamScore": 13
+    },
+    "Notes": "City's only loss of the season"
+  },
+  {
+    "ID": 28,
+    "Date": "1917-11-01",
+    "AwayTeam": {
+      "Name": "City"
+    },
+    "HomeTeam": {
+      "Name": "Poly"
+    },
+    "Score": {
+      "HomeTeamScore": 26,
+      "AwayTeamScore": 0
+    }
+  }
+]

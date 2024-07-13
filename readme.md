@@ -1,11 +1,12 @@
 # API Documentation
-
+------------
 ## Introduction
+------------
 This API provides endpoints to manage and retrieve information about sports games.
 
 ## Endpoints
-
-### 1. Get All Games
+------------
+### Get All Games
 - **URL**: `/api/games/all`
 - **Method**: `GET`
 - **Description**: Returns all games in JSON format.
@@ -13,7 +14,7 @@ This API provides endpoints to manage and retrieve information about sports game
   - Status Code: `200 OK`
   - Body: JSON array of games.
 
-### 2. Get Game by ID
+### Get Game by ID
 - **URL**: `/api/games/:id`
 - **Method**: `GET`
 - **Description**: Returns the game with the specified ID.
@@ -25,19 +26,31 @@ This API provides endpoints to manage and retrieve information about sports game
     - `404 Not Found` if the game with the specified ID is not found.
   - Body: JSON object representing the game.
 
-### 3. Get Games by Team
-- **URL**: `/api/games/team/:name`
+### Get Games by Home Team
+- **URL**: `/api/games/home/:name`
 - **Method**: `GET`
-- **Description**: Returns all games involving the specified team.
+- **Description**: Returns all games where the specified team plays as the home team.
 - **Parameters**:
-  - `name` (string): The name of the team to retrieve games for.
+  - `name` (string): Name of the home team to search for.
 - **Response**:
   - Status Code:
     - `200 OK` if games involving the team are found.
     - `404 Not Found` if no games involving the team are found.
   - Body: JSON array of games involving the specified team.
 
-### 4. Get Games by Year
+### Get Games by Away Team
+- **URL**: `/api/games/away/:name`
+- **Method**: `GET`
+- **Description**: Returns all games where the specified team plays as the away team.
+- **Parameters**:
+  - `name` (string): Name of the away team to search for.
+- **Response**:
+  - Status Code:
+    - `200 OK` if games involving the team are found.
+    - `404 Not Found` if no games involving the team are found.
+  - Body: JSON array of games involving the specified team.
+
+### Get Games by Year
 - **URL**: `/api/games/year/:year`
 - **Method**: `GET`
 - **Description**: Returns all games played in the specified year.
@@ -50,13 +63,15 @@ This API provides endpoints to manage and retrieve information about sports game
   - Body: JSON array of games played in the specified year.
 
 ## Data Structures
-
+------------
 ### Team
 Represents a sports team.
+
 - `Name` (string): The name of the team.
 
 ### Game
 Represents a sports game.
+
 - `ID` (int): The unique identifier of the game.
 - `HomeTeam` (Team): The home team participating in the game.
 - `AwayTeam` (Team): The away team participating in the game.
@@ -66,5 +81,6 @@ Represents a sports game.
 
 ### Score
 Represents the score of a sports game.
+
 - `HomeTeamScore` (int): The score of the home team.
 - `AwayTeamScore` (int): The score of the away team.

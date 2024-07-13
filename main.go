@@ -1,34 +1,31 @@
 package main
 
 import (
+	"encoding/json"
+	"html/template"
 	"net/http"
+	"os"
 	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/russross/blackfriday"
 )
 
-type Team struct {
-	Name string `json:"name"`
-}
+var games []Game
 
-type Game struct {
-	ID       int    `json:"id"`
-	HomeTeam *Team  `json:"homeTeam"`
-	AwayTeam *Team  `json:"awayTeam"`
-	Date     string `json:"date"`
-	Score    *Score `json:"score"`
-	Notes    string `json:"notes"`
-}
+func init() {
+	// Read data from JSON file
+	data, err := os.ReadFile("data.json")
+	if err != nil {
+		panic(err)
+	}
 
-type Score struct {
-	HomeTeamScore int `json:"homeTeamScore"`
-	AwayTeamScore int `json:"awayTeamScore"`
-}
-
-var games = []Game{
-	{ID: 1, HomeTeam: &Team{Name: "City"}, AwayTeam: &Team{Name: "Poly"}, Date: "2000-11-01", Score: &Score{HomeTeamScore: 10, AwayTeamScore: 7}, Notes: ""},
-	{ID: 2, HomeTeam: &Team{Name: "Poly"}, AwayTeam: &Team{Name: "City"}, Date: "2001-11-01", Score: &Score{HomeTeamScore: 20, AwayTeamScore: 10}, Notes: ""},
+	// Unmarshal JSON data into games slice
+	err = json.Unmarshal(data, &games)
+	if err != nil {
+		panic(err)
+	}
 }
 
 // Returns all games in JSON format
@@ -56,12 +53,12 @@ func getGamesByID(client *gin.Context) {
 	client.IndentedJSON(http.StatusNotFound, gin.H{"message": "game not found"})
 }
 
-// keep for now, but figure out why this would be used
-func getGamesByTeam(client *gin.Context) {
+// Get by games home team
+func getGamesByHomeTeam(client *gin.Context) {
 	name := client.Param("name")
 	var teamGames []Game
 	for _, g := range games {
-		if g.HomeTeam.Name == name || g.AwayTeam.Name == name {
+		if g.HomeTeam.Name == name {
 			teamGames = append(teamGames, g)
 		}
 	}
@@ -71,7 +68,23 @@ func getGamesByTeam(client *gin.Context) {
 	} else {
 		client.IndentedJSON(http.StatusNotFound, gin.H{"message": "team not found"})
 	}
+}
 
+// Get by games by away team
+func getGamesByAwayTeam(client *gin.Context) {
+	name := client.Param("name")
+	var teamGames []Game
+	for _, g := range games {
+		if g.AwayTeam.Name == name {
+			teamGames = append(teamGames, g)
+		}
+	}
+	if len(teamGames) > 0 {
+		client.IndentedJSON(http.StatusOK, teamGames)
+		return
+	} else {
+		client.IndentedJSON(http.StatusNotFound, gin.H{"message": "team not found"})
+	}
 }
 
 // Returns games by year
@@ -102,6 +115,7 @@ func getGamesByYear(client *gin.Context) {
 
 		}
 	}
+
 	if len(yearGames) > 0 {
 		client.IndentedJSON(http.StatusOK, yearGames)
 		return
@@ -112,10 +126,81 @@ func getGamesByYear(client *gin.Context) {
 
 func main() {
 	router := gin.Default()
+
+	// Load all templates from the templates directory
+	router.SetHTMLTemplate(template.Must(template.ParseGlob("templates/*.html")))
+
+	// Serve static files from the static directory
+	router.Static("/static", "./static")
+
+	router.GET("/", func(c *gin.Context) {
+		searchType := c.Query("searchType")
+		query := c.Query("query")
+		var results []Game
+		var message string
+
+		switch searchType {
+		case "id":
+			id, err := strconv.Atoi(query)
+			if err == nil {
+				for _, g := range games {
+					if g.ID == id {
+						results = append(results, g)
+					}
+				}
+			}
+		case "home":
+			for _, g := range games {
+				if g.HomeTeam.Name == query {
+					results = append(results, g)
+				}
+			}
+		case "away":
+			for _, g := range games {
+				if g.AwayTeam.Name == query {
+					results = append(results, g)
+				}
+			}
+		case "year":
+			year, err := strconv.Atoi(query)
+			if err == nil {
+				for _, g := range games {
+					gameDate, err := time.Parse("2006-01-02", g.Date)
+					if err == nil && gameDate.Year() == year {
+						results = append(results, g)
+					}
+				}
+			}
+		}
+
+		if len(results) == 0 {
+			message = "No results found"
+		}
+
+		c.HTML(http.StatusOK, "index.html", gin.H{
+			"Results": results,
+			"Message": message,
+		})
+	})
+
 	router.GET("/api/games/all", getGames)
 	router.GET("/api/games/:id", getGamesByID)
-	router.GET("/api/games/team/:name", getGamesByTeam)
+	router.GET("/api/games/home/:name", getGamesByHomeTeam)
+	router.GET("/api/games/away/:name", getGamesByAwayTeam)
 	router.GET("/api/games/year/:year", getGamesByYear)
+
+	// Serve the documentation.html file
+	router.GET("/docs", func(c *gin.Context) {
+		mdContent, err := os.ReadFile("README.md")
+		if err != nil {
+			c.String(http.StatusInternalServerError, "Failed to read documentation")
+			return
+		}
+		htmlContent := blackfriday.MarkdownCommon(mdContent)
+		c.HTML(http.StatusOK, "documentation.html", gin.H{
+			"Content": template.HTML(htmlContent),
+		})
+	})
 
 	err := router.Run("localhost:8080")
 	if err != nil {
