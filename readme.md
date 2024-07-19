@@ -2,7 +2,7 @@
 ------------
 ## Introduction
 ------------
-This API provides endpoints to manage and retrieve information about sports games.
+This API provides endpoints to retrieve information about the historic City-Poly game.
 
 ## Endpoints
 ------------
